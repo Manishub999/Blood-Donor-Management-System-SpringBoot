@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Connecting Lives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Inter', sans-serif; }
+        .header-brand { font-weight: 700; font-size: 1.5rem; color: #dc3545; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: #dc3545; margin-bottom: 0; }
+        .stat-label { font-size: 1rem; color: #495057; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; }
+
+        /* Style for the hidden login form popover */
+        .admin-popover {
+            width: 250px;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: #fff;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+
+<nav class="py-3 px-4 d-flex justify-content-between align-items-center bg-white shadow-sm">
+    <div class="header-brand">
+        <img src="assets/logo.png" style="height:28px" alt="BloodConnect logo">
+        <span>BloodConnect</span>
+    </div>
+    <!-- ADMIN LOGIN BUTTON (Final working configuration) -->
+    <div>
+        <button id="adminLoginButton" class="btn btn-outline-secondary btn-sm" 
+                data-bs-toggle="popover" data-bs-placement="bottom" 
+                data-bs-html="true" data-bs-title="Login"
+                data-bs-content="#loginPopoverContentContainer">
+            Admin Login
+        </button>
+    </div>
+</nav>
+
+<main class="container my-5">
+    <div class="row g-5 align-items-center">
+        <!-- Left Side: Marketing/Stats -->
+        <div class="col-lg-7">
+            <h1 class="hero-title">Connecting Lives Through Blood Donation</h1>
+            <p class="lead text-muted mt-4 mb-5">
+                A comprehensive platform connecting patients, donors and hospitals for emergency blood requests and donations.
+            </p>
+
+            <div class="row text-center">
+                <div class="col-6 col-md-3">
+                    <p class="stat-number">2,847</p>
+                    <p class="stat-label">Lives Saved</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number">15,432</p>
+                    <p class="stat-label">Active Donors</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number">156</p>
+                    <p class="stat-label">Partner Hospitals</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number">24/7</p>
+                    <p class="stat-label">Emergency Responses</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Focus on Public Actions -->
+        <div class="col-lg-5 d-flex justify-content-center">
+            <div class="card bg-white border-0 p-5 shadow-lg" style="min-width: 400px; border-radius: 15px;">
+                <h4 class="mb-4 text-center">Your Next Step</h4>
+                
+                <p class="text-center lead">
+                    Are you here to help or to find help?
+                </p>
+
+                <!-- REGISTER AS DONOR -->
+                <a href="register-donor.html" class="btn btn-danger w-100 mb-3 py-3">
+                    <i class="fas fa-heart me-2"></i> Register as a Donor
+                </a>
+
+                <!-- CREATE REQUEST -->
+                <a href="request-blood.html" class="btn btn-outline-success w-100 py-3">
+                    <i class="fas fa-search me-2"></i> Need Blood? Create a Request
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Hidden HTML for the popover content container -->
+<div id="loginPopoverContentContainer" style="display: none;">
+    <div class="admin-popover">
+        <form id="loginFormPopover">
+            <p class="text-center small mb-3">Sign in</p> 
+            <div class="mb-2">
+                <input type="text" class="form-control form-control-sm" id="username" name="email" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-danger btn-sm w-100">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
